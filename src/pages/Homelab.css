@@ -1,0 +1,126 @@
+.homelab-container {
+  min-height: 100vh;
+  font-family: "JetBrainsMono Nerd Font", "JetBrains Mono", monospace;
+  transition: background-color 0.3s ease;
+  position: relative;
+  padding: 40px 20px;
+}
+
+.homelab-content {
+  max-width: 1000px;
+  margin: 0 auto;
+  margin-top: 60px;
+}
+
+.homelab-title {
+  font-size: 2.5rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  transition: color 0.3s ease;
+}
+
+.homelab-subtitle {
+  margin-bottom: 2.5rem;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.homelab-image-wrapper {
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+.homelab-image {
+  max-width: 400px;
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  border: 1px solid;
+}
+
+.homelab-text {
+  line-height: 1.8;
+  transition: color 0.3s ease;
+}
+
+.homelab-section-title {
+  font-size: 1.8rem;
+  margin-top: 3rem;
+  margin-bottom: 1.2rem;
+  font-weight: 600;
+}
+
+.homelab-subsection-title {
+  font-size: 1.3rem;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  font-weight: 500;
+}
+
+.code-inline {
+  padding: 3px 8px;
+  border-radius: 4px;
+  font-family: "JetBrainsMono Nerd Font", "JetBrains Mono", monospace;
+  font-size: 0.85em;
+  border: 1px solid;
+}
+
+.code-block {
+  padding: 20px;
+  border-radius: 8px;
+  font-family: "JetBrainsMono Nerd Font", "JetBrains Mono", monospace;
+  font-size: 0.85em;
+  overflow: auto;
+  line-height: 1.7;
+  border: 1px solid;
+  white-space: pre;
+}
+
+.info-card {
+  padding: 20px;
+  border-radius: 8px;
+  border: 1px solid;
+  margin-bottom: 2rem;
+}
+
+.info-card-title {
+  font-size: 1.3rem;
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-weight: 500;
+}
+
+.info-list {
+  margin-left: 1.2rem;
+  line-height: 2;
+  margin-bottom: 0;
+}
+
+.homelab-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 2rem;
+}
+
+.homelab-table thead tr {
+  font-weight: 600;
+}
+
+.homelab-table th,
+.homelab-table td {
+  padding: 14px;
+  text-align: left;
+  border: 1px solid;
+}
+
+.homelab-table td {
+  padding: 12px;
+}
+
+.homelab-table tbody tr:nth-child(even) {
+  background-color: var(--table-row-bg);
+}
+
+.table-wrapper {
+  overflow-x: auto;
+}

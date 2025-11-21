@@ -1,0 +1,15 @@
+.header {
+  font-family: "JetBrainsMono Nerd Font", "JetBrains Mono", monospace;
+  padding: 20px 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 1px solid #eee;
+}
+
+.header-link {
+  font-size: 1.3rem;
+  font-weight: 500;
+  text-decoration: none;
+  color: #333;
+}

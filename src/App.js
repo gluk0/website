@@ -7,6 +7,7 @@ import Art from './pages/Art'
 import Blog from './pages/Blog'
 import Homelab from './pages/Homelab'
 import logger from './utils/logger'
+import './App.css'
 
 /**
  * Layout component that conditionally shows header
@@ -67,30 +68,12 @@ function App() {
  * @returns {JSX.Element} Not found page
  */
 const NotFound = () => (
-  <div style={{
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-    justifyContent: 'center',
-    minHeight: '60vh',
-    fontFamily: '"JetBrainsMono Nerd Font", "JetBrains Mono", monospace',
-    textAlign: 'center',
-  }}>
-    <h1 style={{ fontSize: '4rem', marginBottom: '1rem' }}>404</h1>
-    <p style={{ fontSize: '1.2rem', marginBottom: '2rem' }}>
+  <div className="not-found-container">
+    <h1 className="not-found-title">404</h1>
+    <p className="not-found-text">
       The page you're looking for doesn't exist.
     </p>
-    <a
-      href="/"
-      style={{
-        padding: '12px 24px',
-        backgroundColor: '#007bff',
-        color: 'white',
-        textDecoration: 'none',
-        borderRadius: '4px',
-        fontSize: '1rem',
-      }}
-    >
+    <a href="/" className="not-found-button">
       Go Home
     </a>
   </div>

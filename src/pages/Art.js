@@ -1,89 +1,21 @@
-import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
+import React from 'react'
 import SketchWrapper from '../components/SketchWrapper'
+import ThemeToggle from '../components/ThemeToggle'
+import BackButton from '../components/BackButton'
+import { useTheme } from '../hooks'
 import voronoi_sketch from '../sketches/voronoi_point'
+import './Art.css'
 
 const Art = () => {
-  const [isDark, setIsDark] = useState(false)
-
-  const theme = {
-    background: isDark ? '#1a1a1a' : '#fff',
-    text: isDark ? '#e0e0e0' : '#333',
-    border: isDark ? '#444' : '#ccc',
-    toggleBg: isDark ? '#2a2a2a' : '#f5f5f5',
-  }
+  const { isDark, theme, toggleTheme } = useTheme()
 
   return (
-    <div style={{
-      minHeight: '100vh',
-      backgroundColor: theme.background,
-      fontFamily: '"JetBrainsMono Nerd Font", "JetBrains Mono", monospace',
-      transition: 'background-color 0.3s ease',
-      position: 'relative',
-      padding: '40px',
-    }}>
-      {/* Theme Toggle */}
-      <button
-        onClick={() => setIsDark(!isDark)}
-        style={{
-          position: 'absolute',
-          top: '20px',
-          right: '20px',
-          background: theme.toggleBg,
-          border: `1px solid ${theme.border}`,
-          borderRadius: '4px',
-          cursor: 'pointer',
-          fontSize: '1.2rem',
-          padding: '8px 12px',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          transition: 'all 0.2s ease',
-          color: theme.text,
-          zIndex: 1000,
-        }}
-        onMouseEnter={(e) => {
-          e.currentTarget.style.transform = 'scale(1.05)'
-          e.currentTarget.style.backgroundColor = isDark ? '#333' : '#e8e8e8'
-        }}
-        onMouseLeave={(e) => {
-          e.currentTarget.style.transform = 'scale(1)'
-          e.currentTarget.style.backgroundColor = theme.toggleBg
-        }}
-        title={isDark ? 'Switch to light mode' : 'Switch to dark mode'}
-      >
-        {isDark ? '☀️' : '🌙'}
-      </button>
+    <div className="page-container" style={{ backgroundColor: theme.background }}>
+      <ThemeToggle isDark={isDark} onToggle={toggleTheme} theme={theme} />
+      <BackButton theme={theme} />
 
-      {/* Back Button */}
-      <Link
-        to="/"
-        style={{
-          position: 'absolute',
-          top: '20px',
-          left: '20px',
-          color: theme.text,
-          textDecoration: 'none',
-          fontSize: '1rem',
-          transition: 'color 0.2s ease',
-          zIndex: 1000,
-        }}
-      >
-        ← back
-      </Link>
-
-      <div style={{
-        maxWidth: '1200px',
-        margin: '0 auto',
-        marginTop: '80px',
-      }}>
-        <h1 style={{
-          fontSize: '2rem',
-          fontWeight: 500,
-          marginBottom: '1.5rem',
-          color: theme.text,
-          transition: 'color 0.3s ease',
-        }}>
+      <div className="page-content">
+        <h1 className="page-title" style={{ color: theme.text }}>
         </h1>
         
         <SketchWrapper sketch={voronoi_sketch} />
@@ -92,4 +24,4 @@ const Art = () => {
   )
 }
 
-export default Art 
+export default Art

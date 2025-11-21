@@ -1,0 +1,33 @@
+.not-found-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 60vh;
+  font-family: "JetBrainsMono Nerd Font", "JetBrains Mono", monospace;
+  text-align: center;
+}
+
+.not-found-title {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+}
+
+.not-found-text {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.not-found-button {
+  padding: 12px 24px;
+  background-color: #007bff;
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  transition: background-color 0.2s ease;
+}
+
+.not-found-button:hover {
+  background-color: #0056b3;
+}

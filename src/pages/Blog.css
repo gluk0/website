@@ -1,0 +1,25 @@
+.page-container {
+  min-height: 100vh;
+  font-family: "JetBrainsMono Nerd Font", "JetBrains Mono", monospace;
+  transition: background-color 0.3s ease;
+  position: relative;
+  padding: 40px;
+}
+
+.page-content {
+  max-width: 800px;
+  margin: 0 auto;
+  margin-top: 80px;
+}
+
+.page-title {
+  font-size: 2rem;
+  font-weight: 500;
+  margin-bottom: 1.5rem;
+  transition: color 0.3s ease;
+}
+
+.blog-content {
+  line-height: 1.8;
+  transition: color 0.3s ease;
+}
