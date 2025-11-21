@@ -33,8 +33,7 @@ RUN apk update && \
         curl && \
     rm -rf /var/cache/apk/*
 
-RUN deluser nginx && \
-    delgroup nginx && \
+RUN deluser --remove-home nginx || true && \
     addgroup -g 1000 nginx && \
     adduser -u 1000 -G nginx -s /bin/sh -D nginx
 
