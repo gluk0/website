@@ -1,0 +1,40 @@
+{{- if .Values.networkPolicy.enabled -}}
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: {{ include "website.fullname" . }}
+  labels:
+    {{- include "website.labels" . | nindent 4 }}
+spec:
+  podSelector:
+    matchLabels:
+      {{- include "website.selectorLabels" . | nindent 6 }}
+  policyTypes:
+  - Ingress
+  - Egress
+  ingress:
+  {{- if .Values.networkPolicy.ingress }}
+    {{- toYaml .Values.networkPolicy.ingress | nindent 2 }}
+  {{- else }}
+  - from:
+    - namespaceSelector:
+        matchLabels:
+          name: {{ .Values.networkPolicy.ingressNamespace | default "cloudflare-gateway" }}
+    ports:
+    - protocol: TCP
+      port: {{ .Values.service.targetPort }}
+  {{- end }}
+  egress:
+  {{- if .Values.networkPolicy.egress }}
+    {{- toYaml .Values.networkPolicy.egress | nindent 2 }}
+  {{- else }}
+  - to:
+    - namespaceSelector: {}
+      podSelector:
+        matchLabels:
+          k8s-app: kube-dns
+    ports:
+    - protocol: UDP
+      port: 53
+  {{- end }}
+{{- end }}
